@@ -26,12 +26,11 @@
       <br><br><br>
 
       <div >
-        <!-- <div class="error">{{narrowMenu.noItemsFounded}}</div> -->
 
 
         <div class="error" ng-if="narrowMenu.noItemFound">NOTHING FOUND!</div>
 
-        <found-items items="narrowMenu.foundItems"  on-remove="narrowMenu.removeItem(index)"></found-items>
+        <found-items found-item="narrowMenu.foundItems"  on-remove="narrowMenu.removeItem(index)"></found-items>
       </div>
 
     </div>

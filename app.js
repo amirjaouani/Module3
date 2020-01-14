@@ -25,7 +25,6 @@ function NarrowItDownController(MenuSearchService) {
       promise.then(function (response) {
 
         if(response.length == 0){
-          // narrowMenu.noItemsFounded = "NOTHING FOUND!";
           narrowMenu.noItemFound = MenuSearchService.noItemFound(true);
         }else{
           narrowMenu.noItemFound = MenuSearchService.noItemFound(false);
@@ -102,7 +101,7 @@ function NarrowItDownController(MenuSearchService) {
     var ddo = {
       templateUrl: 'itemFounded.html',
         scope: {
-            items: '<',
+            foundItem: '<',
             onRemove: '&'
         },
         controller: NarrowItDownController,

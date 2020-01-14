@@ -1,6 +1,8 @@
 <ul>
   <li ng-repeat="menu_item in narrowMenu.items">
     ({{menu_item.name}} - {{menu_item.short_name}}) {{menu_item.description}}
-    <button type="button" class="btn btn-warning" name="button" ng-click="narrowMenu.onRemove({index: $index});">Don't want this one!</button>
+    <button type="button" name="button" ng-click="narrowMenu.onRemove({index: $index});">Don't want this one!</button>
   </li>
 </ul>
+
+<!-- <div class="error" ng-if="narrowMenu.noItemFound()">NOTHING FOUND!</div> -->

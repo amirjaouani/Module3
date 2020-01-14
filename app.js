@@ -25,7 +25,10 @@ function NarrowItDownController(MenuSearchService) {
       promise.then(function (response) {
 
         if(response.length == 0){
-          narrowMenu.noItemsFounded = "NOTHING FOUND!";
+          // narrowMenu.noItemsFounded = "NOTHING FOUND!";
+          narrowMenu.noItemFound = MenuSearchService.noItemFound(true);
+        }else{
+          narrowMenu.noItemFound = MenuSearchService.noItemFound(false);
         }
         narrowMenu.foundItems = response;
 
@@ -37,7 +40,7 @@ function NarrowItDownController(MenuSearchService) {
     }else {
       console.log("The search is empty");
       narrowMenu.foundItems = "";
-      narrowMenu.noItemsFounded = "NOTHING FOUND!";
+      narrowMenu.noItemFound = MenuSearchService.noItemFound(true);
     }
   }
 
@@ -82,6 +85,14 @@ function NarrowItDownController(MenuSearchService) {
 
       return result;
     };
+
+
+
+    service.noItemFound = function(hide){
+
+      return hide;
+    }
+
   }
 
 
